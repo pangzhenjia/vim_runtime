@@ -35,7 +35,7 @@ set guioptions-=L
 
 " Colorscheme
 if has("gui_running")
-    set background=dark
+    set background=light
     colorscheme peaksea
 else
     colorscheme desert
