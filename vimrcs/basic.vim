@@ -60,6 +60,7 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+nmap <leader>wq :wq<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -142,11 +143,12 @@ set foldcolumn=1
 syntax enable 
 
 try
-    colorscheme desert
+    colorscheme peaksea
 catch
 endtry
 
-set background=dark
+set background=light
+set t_Co=256
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -261,11 +263,11 @@ endtry
 
 " Return to last edit position when opening files (You want this!)
 " autocmd BufReadPost *
-"      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-"      \   exe "normal! g`\"" |
-"      \ endif
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 " Remember info about open buffers on close
-" set viminfo^=%
+ set viminfo^=%
 
 
 """"""""""""""""""""""""""""""
@@ -375,7 +377,7 @@ function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"

@@ -5,12 +5,34 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
 """"""""""""""""""""""""""""""
 call pathogen#infect('~/.vim_runtime/sources_forked/{}')
 call pathogen#infect('~/.vim_runtime/sources_non_forked/{}')
 call pathogen#helptags()
+
+
+""""""""""""""""""""""""""""""
+" => tagbar plugin
+""""""""""""""""""""""""""""""
+map <leader>tb :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+
+""""""""""""""""""""""""""""""
+" => taglist plugin
+""""""""""""""""""""""""""""""
+" \tt                 打开Taglist/TxtBrowser窗口，在右侧栏显示
+map <leader>tt :Tlist<CR><c-l>
+" :Tlist              调用TagList
+let Tlist_Show_One_File        = 1             " 只显示当前文件的tags
+let Tlist_Exit_OnlyWindow      = 1             " 如果Taglist窗口是最后一个窗口则退出Vim
+let Tlist_Use_Right_Window     = 1             " 在右侧窗口中显示
+let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
+let Tlist_Sort_Type = "name"                   " items in tags sorted by name
+
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
@@ -78,8 +100,10 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden=0
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.$']
 let g:NERDTreeWinSize=35
+let NERDTreeChDirMode=2  "选中root即设置为当前目录
+let NERDTreeShowBookmarks=1 "显示书签
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
@@ -103,6 +127,7 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 " => vim-airline config (force color)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme="luna"
+let g:airline_powerline_fonts = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
