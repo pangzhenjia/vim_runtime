@@ -32,6 +32,42 @@ let Tlist_Exit_OnlyWindow      = 1             " 如果Taglist窗口是最后一
 let Tlist_Use_Right_Window     = 1             " 在右侧窗口中显示
 let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
 let Tlist_Sort_Type = "name"                   " items in tags sorted by name
+let Tlist_WinWidth=40        "设置taglist宽度
+
+""""""""""""""""""""""""""""""
+" => rainbow parenthesis
+""""""""""""""""""""""""""""""
+let g:rbpt_max = 40
+let g:rbpt_loadcmd_toggle = 0
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \] 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
+""""""""""""""""""""""""""""""
+" => easymotion
+""""""""""""""""""""""""""""""
+
+
 
 
 """"""""""""""""""""""""""""""
@@ -111,8 +147,8 @@ map <leader>nf :NERDTreeFind<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key="\<C-s>"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:multi_cursor_next_key="\<C-m>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
